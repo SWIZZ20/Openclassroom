@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <button ion-button (click)="closeModal()">Retour</button>
+            </ion-col>
+            <ion-col col-8>
+              {{Book.name}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-navbar> 
+</ion-header>
+<ion-content padding>
+    <ion-card >
+        <ion-card-header>
+          {{Book.name}}
+        </ion-card-header>
+        <ion-card-content>
+          <p *ngFor="let line of Book.description">Titre : {{line.title}}<br> Genre : {{line.genre}} <br>Nombre de page : {{line.totalPage}}</p>
+        </ion-card-content>
+    </ion-card>
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+              <button ion-button full color="secondary" (click)="onLend()" [disabled]="Book.isLend ? true : false">Preter</button>
+            </ion-col> 
+            <ion-col>
+              <button ion-button full color="danger" (click)="onLend()" [disabled]="Book.isLend ? false : true">Rendre</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+</ion-content>

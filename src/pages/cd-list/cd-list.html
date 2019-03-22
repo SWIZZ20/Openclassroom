@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Liste de CD</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (click)="onCdStatu(i)" *ngFor="let cd of cdList; let i=index">
+        <ion-icon item-start name="book" [color]=" cd.isLend? 'danger': 'primary'"></ion-icon>
+      {{cd.name}}
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Liste de livre</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (click)="onBookStatus(i)" *ngFor='let book of bookList ;let i=index'>
+  <ion-icon item-start name="book" [color]=" book.isLend? 'danger': 'primary'"></ion-icon>
+      {{book.name}}
+    </button>
+  </ion-list>
+</ion-content>
